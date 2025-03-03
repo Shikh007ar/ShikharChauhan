@@ -16,34 +16,43 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px; /* Reduced padding for smaller screens */
+    padding: 0 15px;
 }
 
 /* Header */
 header {
     background-color: #2c2c2c;
-    padding: 30px 0;
-    text-align: center;
+    padding: 20px 0;
     border-bottom: 2px solid #ff6f61;
 }
 
-header h1 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scales between 1.8rem and 2.5rem */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-left h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     color: #ff6f61;
 }
 
-header p {
-    font-size: clamp(1rem, 3vw, 1.2rem); /* Scales dynamically */
+.header-right {
+    text-align: right;
+}
+
+.header-right .title {
+    font-size: clamp(1rem, 3vw, 1.2rem);
     color: #b0b0b0;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .contact-info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 15px;
-    margin-top: 10px;
 }
 
 .contact-info a {
@@ -131,45 +140,43 @@ footer {
         padding: 0 10px;
     }
 
-    header {
-        padding: 20px 0;
+    .header-right {
+        text-align: right;
     }
 
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-
-    .card {
-        padding: 12px;
-    }
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 15px 0;
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left, .header-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-right .title {
+        margin: 10px 0;
     }
 
     .contact-info {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .section {
-        margin: 20px 0;
+        justify-content: center;
+        gap: 10px;
     }
 
     .skills-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
-
-    .card ul {
-        margin-left: 15px;
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 10px 0;
+    .header-left h1 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
     .contact-info a {
@@ -182,9 +189,5 @@ footer {
 
     .card ul {
         margin-left: 10px;
-    }
-
-    .section h2 {
-        margin-bottom: 10px;
     }
 }
