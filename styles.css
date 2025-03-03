@@ -1,0 +1,190 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Reduced padding for smaller screens */
+}
+
+/* Header */
+header {
+    background-color: #2c2c2c;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #ff6f61;
+}
+
+header h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scales between 1.8rem and 2.5rem */
+    color: #ff6f61;
+}
+
+header p {
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Scales dynamically */
+    color: #b0b0b0;
+    margin: 10px 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contact-info a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #fff;
+}
+
+/* Section Styles */
+.section {
+    margin: 30px 0;
+}
+
+.section h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #ff6f61;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.card p, .card ul {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    color: #b0b0b0;
+}
+
+.card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.card li {
+    margin: 8px 0;
+}
+
+.card li strong {
+    color: #e0e0e0;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.skill-category h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #ff6f61;
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c2c2c;
+    color: #b0b0b0;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .card {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .section {
+        margin: 20px 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .card ul {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    .contact-info a {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card ul {
+        margin-left: 10px;
+    }
+
+    .section h2 {
+        margin-bottom: 10px;
+    }
+}
