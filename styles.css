@@ -16,178 +16,212 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 20px;
 }
 
-/* Header */
-header {
-    background-color: #2c2c2c;
+/* Glamping Listing */
+.glamping-listing {
     padding: 20px 0;
-    border-bottom: 2px solid #ff6f61;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.header-left h1 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    color: #ff6f61;
-}
-
-.header-right {
-    text-align: right;
-}
-
-.header-right .title {
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    color: #b0b0b0;
-    margin-bottom: 10px;
-}
-
-.contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 15px;
-}
-
-.contact-info a {
-    color: #ff6f61;
-    text-decoration: none;
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    transition: color 0.3s;
-}
-
-.contact-info a:hover {
-    color: #fff;
-}
-
-/* Section Styles */
-.section {
-    margin: 30px 0;
-}
-
-.section h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    color: #ff6f61;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #444;
-    padding-bottom: 8px;
-}
-
-/* Card Styles */
-.card {
+.listing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     background-color: #2c2c2c;
-    padding: 15px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.card h3 {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+@media (max-width: 768px) {
+    .listing-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+}
+
+/* Image Section */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.main-image, .secondary-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+/* Details Section */
+.details-section {
+    padding: 10px;
+}
+
+.badge {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.details-section h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
     color: #e0e0e0;
     margin-bottom: 10px;
 }
 
-.card p, .card ul {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
+.location {
+    font-size: 1rem;
     color: #b0b0b0;
+    margin-bottom: 10px;
 }
 
-.card ul {
-    list-style-type: disc;
-    margin-left: 20px;
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.card li {
-    margin: 8px 0;
-}
-
-.card li strong {
-    color: #e0e0e0;
-}
-
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-}
-
-.skill-category h3 {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+.star {
     color: #ff6f61;
-    margin-bottom: 8px;
+    font-size: 1.2rem;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #2c2c2c;
+.rating-score {
+    font-size: 1rem;
     color: #b0b0b0;
-    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
-/* Enhanced Responsive Design */
+.plus-badge {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.amenity {
+    background-color: #444;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.room-info {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.pricing {
+    margin-bottom: 20px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #b0b0b0;
+    font-size: 1rem;
+}
+
+.discount {
+    color: #ff6f61;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.final-price {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #e0e0e0;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.tax-info, .points {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.vip-button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.vip-button:hover {
+    background-color: #e65b50;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-    .container {
-        padding: 0 10px;
+    .listing-grid {
+        gap: 15px;
+        padding: 15px;
     }
 
-    .header-right {
-        text-align: right;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .main-image, .secondary-image {
+        max-height: 250px;
     }
 }
 
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
+    .container {
+        padding: 10px;
     }
 
-    .header-left, .header-right {
-        width: 100%;
-        text-align: center;
+    .listing-grid {
+        padding: 10px;
     }
 
-    .header-right .title {
-        margin: 10px 0;
+    .main-image, .secondary-image {
+        max-height: 200px;
     }
 
-    .contact-info {
-        justify-content: center;
-        gap: 10px;
+    .details-section h1 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .final-price {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
 }
 
 @media (max-width: 480px) {
-    .header-left h1 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
+    .main-image, .secondary-image {
+        max-height: 150px;
     }
 
-    .contact-info a {
-        font-size: 0.9rem;
+    .details-section {
+        padding: 5px;
     }
 
-    .card {
-        padding: 10px;
-    }
-
-    .card ul {
-        margin-left: 10px;
+    .vip-button {
+        width: 100%;
+        padding: 8px 0;
     }
 }
